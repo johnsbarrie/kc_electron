@@ -1,5 +1,4 @@
 require('../less/main.less');
-
 'use strict';
 
 var React = require('react');
@@ -34,7 +33,7 @@ var EntryPoint = React.createClass({
                 <div id="transport-buttons">
                     <div className="nav-start-button transport-button"></div>
                     <div className="nav-prev-button transport-button"></div>
-                    <div className="transport-button nav-play-button"></div>
+                    <div id="nav-start-button" className="nav-play-button transport-button"></div>
                     <div className="nav-next-button transport-button"></div>
                     <div className="nav-end-button transport-button"></div>
                     <div className="nav-loop-button transport-button"></div>
@@ -55,3 +54,17 @@ var EntryPoint = React.createClass({
 });
 
 ReactDOM.render(<EntryPoint />, document.getElementById('content'));
+
+const ipcRenderer = require('electron').ipcRenderer;
+
+/*
+const asyncMsgBtn = document.getElementById('nav-start-button');
+asyncMsgBtn.addEventListener('click', function () {
+    var john = ipcRenderer.sendSync('asynchronous-message', 'ping');
+    console.log('john ', john);
+})
+
+ipcRenderer.on('asynchronous-reply', (event, arg) => {
+  console.log('asynchronous-reply', arg);
+})
+*/
