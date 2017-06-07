@@ -1,9 +1,9 @@
 require('../less/main.less');
-
 'use strict';
 
 var React = require('react');
 var ReactDOM = require('react-dom');
+const ipcRenderer = require('electron').ipcRenderer;
 
 var EntryPoint = React.createClass({
   render: function(){
@@ -32,12 +32,12 @@ var EntryPoint = React.createClass({
             </div>
             <div id="menu-transport">
                 <div id="transport-buttons">
-                    <div id="nav-start-button" className="transport-button"></div>
-                    <div id="nav-prev-button" className="transport-button"></div>
-                    <div id='nav-play-button' className="transport-button"></div>
-                    <div id="nav-next-button" className="transport-button"></div>
-                    <div id="nav-end-button" className="transport-button"></div>
-                    <div id="nav-loop-button" className="transport-button"></div>
+                    <div className="nav-start-button transport-button"></div>
+                    <div className="nav-prev-button transport-button"></div>
+                    <div id="nav-play-button" className="transport-button"></div>
+                    <div className="nav-next-button transport-button"></div>
+                    <div className="nav-end-button transport-button"></div>
+                    <div className="nav-loop-button transport-button"></div>
                 </div>    
             </div>
         </div>
@@ -55,3 +55,11 @@ var EntryPoint = React.createClass({
 });
 
 ReactDOM.render(<EntryPoint />, document.getElementById('content'));
+
+
+const asyncMsgBtn = document.getElementById('nav-play-button');
+asyncMsgBtn.addEventListener('click', function () {
+    var john = ipcRenderer.sendSync('synchronous-message', 'ping');
+    console.log('clicked ', john);
+})
+

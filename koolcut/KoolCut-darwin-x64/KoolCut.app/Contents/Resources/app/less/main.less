@@ -1,7 +1,9 @@
 @transport-button-gradient: linear-gradient(#606060 3%, #696969 50%, #464646 50%);
 @transport-button-gradient-hover: linear-gradient(#505050 3%, #595959 50%, #363636 50%);
+@transport-button-gradient-active: linear-gradient(#404040 3%, #494949 50%, #262626 50%);
 
 html,body {
+ 	font-family:"Verdana";
     height:100%;
     margin: 0;
     background-color: #b5b5b5;
@@ -23,12 +25,12 @@ html,body {
 }
 
 #top {
-	height: 50%;
+	height: 60%;
 	display: flex;
 }
 
 #timeline {
-	height: 50%;
+	height: 40%;
 	display: flex;
 }
 
@@ -134,60 +136,76 @@ html,body {
 				background-size: 21px;
 			}
 
-			#nav-start-button {
+			.nav-start-button {
 				background-image: url('../public/assets/pictos/nav_start_out.png'), @transport-button-gradient;
 			}
 
-			#nav-start-button:hover {
+			.nav-start-button:hover {
     			background-image: url('../public/assets/pictos/nav_start_over.png'), @transport-button-gradient-hover;
 			}
 
-			#nav-prev-button {
+			.nav-start-button:active {
+    			background-image: url('../public/assets/pictos/nav_start_over.png'), @transport-button-gradient-active;
+			}
+
+			.nav-prev-button {
 				background-image: url('../public/assets/pictos/nav_prev_out.png'), @transport-button-gradient;
 			}
 
-			#nav-prev-button:hover {
+			.nav-prev-button:hover {
     			background-image: url('../public/assets/pictos/nav_prev_over.png'), @transport-button-gradient-hover;
 			}
 
+			.nav-prev-button:active {
+    			background-image: url('../public/assets/pictos/nav_prev_over.png'), @transport-button-gradient-active;
+			}
+
 			#nav-play-button {
-				background-image: url('../public/assets/pictos/play_out.png'), @transport-button-gradient;
+				background-image: url('../public/assets/pictos/nav_play_out.png'), @transport-button-gradient;
 			}
 
 			#nav-play-button:hover {
-    			background-image: url('../public/assets/pictos/play_over.png'), @transport-button-gradient-hover;
+    			background-image: url('../public/assets/pictos/nav_play_over.png'), @transport-button-gradient-hover;
 			}
 
-			#nav-next-button {
+			#nav-play-button:active { 
+    			background-image: url('../public/assets/pictos/nav_play_over.png'), @transport-button-gradient-active;
+			}
+
+			.nav-next-button {
 				background-image: url('../public/assets/pictos/nav_next_out.png'), @transport-button-gradient;
 			}
 
-			#nav-next-button:hover {
+			.nav-next-button:hover {
     			background-image: url('../public/assets/pictos/nav_next_over.png'), @transport-button-gradient-hover;
 			}
 
-			#nav-end-button {
+			.nav-next-button:active {
+    			background-image: url('../public/assets/pictos/nav_next_over.png'), @transport-button-gradient-active;
+			}
+
+			.nav-end-button {
 				background-image: url('../public/assets/pictos/nav_end_out.png'), @transport-button-gradient;
 			}
 
-			#nav-end-button:hover {
+			.nav-end-button:hover {
     			background-image: url('../public/assets/pictos/nav_end_over.png'), @transport-button-gradient-hover;
 			}
 
-			#nav-end-button {
-				background-image: url('../public/assets/pictos/nav_end_out.png'), @transport-button-gradient;
+			.nav-end-button:active {
+    			background-image: url('../public/assets/pictos/nav_end_over.png'), @transport-button-gradient-active;
 			}
 
-			#nav-end-button:hover {
-    			background-image: url('../public/assets/pictos/nav_end_over.png'), @transport-button-gradient-hover;
-			}
-
-			#nav-loop-button {
+			.nav-loop-button {
 				background-image: url('../public/assets/pictos/nav_loop_out.png'), @transport-button-gradient;
 			}
 
-			#nav-loop-button:hover {
+			.nav-loop-button:hover {
     			background-image: url('../public/assets/pictos/nav_loop_over.png'), @transport-button-gradient-hover;
+			}
+
+			.nav-loop-button:active {
+    			background-image: url('../public/assets/pictos/nav_loop_over.png'), @transport-button-gradient-active;
 			}
 		}
 	}

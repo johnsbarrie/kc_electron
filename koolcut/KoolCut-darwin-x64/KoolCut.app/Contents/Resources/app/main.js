@@ -1,6 +1,8 @@
 var app = require('app');
 var BrowserWindow = require('browser-window');
 
+const {ipcMain} = require('electron');
+
 app.on('window-all-closed', function() {
   if (process.platform != 'darwin') {
     app.quit();
@@ -24,4 +26,7 @@ app.on('ready', function() {
   });
 });
 
-
+ipcMain.on('synchronous-message', (event, arg) => {
+  console.log('synchronous-message ', arg);  // prints "ping"
+  event.returnValue = 'pong';
+});
