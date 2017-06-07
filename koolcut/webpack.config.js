@@ -1,10 +1,11 @@
 var webpack = require('webpack');
+var webpackTargetElectronRenderer = require('webpack-target-electron-renderer');
 
 module.exports = {
   entry: {
     app: ['webpack/hot/dev-server', './js/entry.js']
   },
-
+  target: 'electron-renderer',
   output: {
     path: './public/built',
     filename: 'bundle.js',
