@@ -2,7 +2,8 @@ var fs = require('fs');
 var { app, BrowserWindow } = require('electron');
 var { PreferenceProxy } = require('./io/PreferenceProxy');
 var { ProjectsProxy } = require('./io/ProjectsProxy');
-
+var { FFmpegProxy } = require('./io/FFmpegProxy');
+//FFmpegProxy.startProcess();
 /*
 
 

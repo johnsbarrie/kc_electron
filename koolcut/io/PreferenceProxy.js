@@ -36,5 +36,4 @@ var PreferenceProxyClass = (function () {
   return PreferenceProxy;
 })();
 
-var PreferenceProxy = new PreferenceProxyClass();
-exports.PreferenceProxy = PreferenceProxy;
+exports.PreferenceProxy = new PreferenceProxyClass();

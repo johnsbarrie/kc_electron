@@ -3,8 +3,8 @@ var ffmpegPath = require('ffmpeg-static').path.replace('app.asar', 'app.asar.unp
 
 var FFmpegProxyClass = (function () {
   function FFmpegProxy() {}
-  
-  PreferenceProxy.prototype.startProcess = function (stdout_cb, stderr_cb){
+
+  FFmpegProxy.prototype.startProcess = function (stdout_cb, stderr_cb){
     var ffmpeg = spawn(ffmpegPath,
       ['-i',
       '/Users/javanai/Documents/KoolCapture/Film/shots/counting/png/view%07d.png',
@@ -23,5 +23,4 @@ var FFmpegProxyClass = (function () {
   return FFmpegProxy;
 })();
 
-var FFmpegProxy = new FFmpegProxy();
-exports.PreferenceProxy = FFmpegProxy;
+exports.FFmpegProxy = new FFmpegProxyClass();

@@ -16,7 +16,7 @@ var ProjectsProxyClass = (function () {
   // ipcMain.on('synchronous-message', (event, arg) => {
   ProjectsProxy.prototype.createNavObject = function (workspace, cb) {
     this._readProjects(navObject, workspace, function (projects){
-      
+
       projects.map(function (project){
         var projectObject = {
           name: project,
@@ -61,5 +61,4 @@ var ProjectsProxyClass = (function () {
    return ProjectsProxy;
  })();
 
- var ProjectsProxy = new ProjectsProxyClass();
- exports.ProjectsProxy = ProjectsProxy;
+ exports.ProjectsProxy = new ProjectsProxyClass();
