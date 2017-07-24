@@ -3,7 +3,7 @@ var webpackTargetElectronRenderer = require('webpack-target-electron-renderer');
 
 module.exports = {
   entry: {
-    app: ['webpack/hot/dev-server', './js/entry.js']
+    app: ['webpack/hot/dev-server', './ux/App.js']
   },
   target: 'electron-renderer',
   output: {
@@ -11,12 +11,10 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: 'http://localhost:8080/built/'
   },
-
   devServer: {
     contentBase: './public',
     publicPath: 'http://localhost:8080/built/'
   },
-
   module: {
     loaders: [
       {
@@ -28,11 +26,10 @@ module.exports = {
         }
       },
       { test: /\.css$/, loader: 'style-loader!css-loader' },
-      { test: /\.less$/, loader: 'style-loader!css-loader!less-loader'},
-       {test:/\.(png|jpe?g|gif)$/,exclude:/node_modules/,loader: 'url-loader?limit=1024&name=/assets/[name].[ext]'}
+      { test: /\.less$/, loader: 'style-loader!css-loader!less-loader' },
+      { test:/\.(png|jpe?g|gif)$/,exclude:/node_modules/,loader: 'url-loader?limit=1024&name=/assets/[name].[ext]' }
     ]
   },
-
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.IgnorePlugin(new RegExp("^(fs)$"))
