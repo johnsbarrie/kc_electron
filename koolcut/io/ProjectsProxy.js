@@ -6,14 +6,14 @@ var { PreferenceProxy } = require('./PreferenceProxy');
 
 const navObject = [];
 var ProjectsProxyClass = (function () {
-  function ProjectsProxy() {}
+  function ProjectsProxy() {
+    this.shotNavigationMap = [];
+  }
 
   ProjectsProxy.prototype.mapFromPath = function (workspace, cb) {
-    console.log('PreferenceProxy.workspace ', PreferenceProxy, PreferenceProxy.workspace);
     this.createNavObject(PreferenceProxy.workspace, cb);
   }
 
-  // ipcMain.on('synchronous-message', (event, arg) => {
   ProjectsProxy.prototype.createNavObject = function (workspace, cb) {
     this._readProjects(navObject, workspace, function (projects){
 
@@ -24,9 +24,10 @@ var ProjectsProxyClass = (function () {
           shots: []
         };
         navObject.push(projectObject);
-
         this._readShotsFromProject(projectObject);
       }.bind(this));
+
+      this.shotNavigationMap.push(navObject);
       cb(navObject);
     }.bind(this));
   }
@@ -45,7 +46,7 @@ var ProjectsProxyClass = (function () {
         var shotObject = {};
         var shotPath = path.resolve(shotsPath, shot);
         shotObject['path'] = shotPath;
-        shotObject['shot'] = shot;
+        shotObject['name'] = shot;
         shotsArray.push(shotObject);
       });
     });

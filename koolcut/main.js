@@ -3,11 +3,14 @@ var { app, BrowserWindow } = require('electron');
 var { PreferenceProxy } = require('./io/PreferenceProxy');
 var { ProjectsProxy } = require('./io/ProjectsProxy');
 var { FFmpegProxy } = require('./io/FFmpegProxy');
-//FFmpegProxy.startProcess();
-/*
-
-
 const { ipcMain } = require('electron');
+
+ipcMain.on('retrieveProjects', function(evt, arg){
+	evt.returnValue = ProjectsProxy.shotNavigationMap;
+});
+//FFmpegProxy.startProcess();
+
+/*
 app.on('window-all-closed', function() {
   if (process.platform != 'darwin') {
     app.quit();
@@ -35,12 +38,11 @@ function loadWindow(){
 
 		mainWindow.on('closed', function() {
 			mainWindow = null;
-			});
+		});
 
-			mainWindow.webContents.on('did-finish-load', function() {
+		mainWindow.webContents.on('did-finish-load', function() {
 			setTimeout(function(){
 				mainWindow.show();
 			}, 40);
 		});
-
 }
