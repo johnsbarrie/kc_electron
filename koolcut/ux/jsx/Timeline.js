@@ -6,9 +6,11 @@ import Shot from './Shot';
 export default class Timeline extends React.Component {
 	render () {
 		const shotsData = [
-				{ name:"shot1", length:4 },
-				{ name:"shot2", length:180 },
-				{ name:"shot3", length:180 },
+				{ name:"shot1", length:1 },
+				{ name:"shot2", length:80 },
+				{ name:"shot1", length:5 },
+				{ name:"shot2", length:30 },
+				{ name:"shot3", length:280 },
 				{ name:"shot4", length:180 },
 				{ name:"shot5", length:180 },
 				{ name:"shot6", length:180 },
@@ -38,9 +40,8 @@ export default class Timeline extends React.Component {
 }
 
 class Shots extends React.Component {
-
 	onMouseUpHandler(e){
-		console.log(e.clientX);
+		//console.log(e.clientX);
 	}
 
 	render () {
