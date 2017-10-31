@@ -38,6 +38,11 @@ html,body {
 
 #timeline {
 	height: 20%;
+}
+
+#shots {
+  position: relative;
+  height: 100%;
 	display: flex;
 }
 
@@ -53,6 +58,9 @@ html,body {
 }
 
 .nav-film-name {
+  -webkit-touch-callout: none;
+  user-select: none;
+  -webkit-user-select: none;
   background: @tree-film-gradient;
   background-repeat: no-repeat;
   padding-left: 2px;
@@ -65,6 +73,9 @@ html,body {
 }
 
 .nav-shot {
+  -webkit-touch-callout: none;
+  user-select: none;
+  -webkit-user-select: none;
   margin-bottom: 3px;
   padding-left: 4px;
   border-right-style: solid;
@@ -134,6 +145,9 @@ html,body {
 	flex-direction: column;
 
 	#preview-content {
+    -webkit-touch-callout: none;
+    user-select: none;
+    -webkit-user-select: none;
 		width: 100%;
 		flex-grow: 1;
 		background-color: #f2828282;
@@ -289,7 +303,7 @@ html,body {
     overflow-x: scroll;
 		background-color: #2a2a2a;
 
-    .timeline-shot {
+    .timeline-shot, .timeline-shot-dragging {
       flex: none;
       overflow: hidden;
       cursor: pointer;
@@ -303,12 +317,41 @@ html,body {
       border-style: solid;
       border-width: 1px;
       .shot-title {
+        -webkit-touch-callout: none;
+        user-select: none;
+        -webkit-user-select: none;
         padding: 2px;
       }
     }
 
-    .timeline-shot:hover {
+    .timeline-shot-hoved {
       background: linear-gradient(#515151 , #292929 30%, #282828 60%, #282828 );
     }
+
+    .timeline-shot-selected {
+      background: linear-gradient(#919191 , #292929 30%, #282828 60%, #282828 );
+    }
+
+    .timeline-shot-dragging {
+      border-color: #2a2a2a;
+      background: linear-gradient(#2a2a2a, #2a2a2a);
+      color: #2a2a2a;
+    }
 	}
+
+  #timeline-cursor {
+    background-color: red;
+    width: 20px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  #timeline-scroller {
+    position: relative;
+    height: 100;
+
+  }
+
 }

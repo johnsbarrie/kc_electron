@@ -1,11 +1,11 @@
 'use strict';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Shot from './Shot';
+import TimelineScroller from './TimelineScroller';
 
-export default class Timeline extends React.Component {
+export default class TimelinePanel extends React.Component {
 	render () {
-		const shotsData = [
+		const timelineData = [
 				{ name:"shot1", length:1 },
 				{ name:"shot2", length:80 },
 				{ name:"shot1", length:5 },
@@ -25,10 +25,10 @@ export default class Timeline extends React.Component {
 				{ name:"shot4", length:180 },
 				{ name:"shot5", length:180 },
 				{ name:"shot6", length:180 },
-				{ name:"looppp", length:280 },
+				{ name:"shot690", length:280 },
 			];
 
-		const shots = <Shots shots={shotsData} />
+		const shots = <TimelineScroller timelineData={timelineData} />
 
 		return (
 			<div id="timeline" style={{backgroundColor:'0xffffff'}}>
@@ -36,19 +36,5 @@ export default class Timeline extends React.Component {
 				{ shots }
 			</div>
 		)
-	}
-}
-
-class Shots extends React.Component {
-	onMouseUpHandler(e){
-		//console.log(e.clientX);
-	}
-
-	render () {
-		const children = this.props.shots.map(function (shot, index){
-			return (<Shot key={index} shot={shot}/>);
-		});
-
-		return(<div id="timeline-content" onMouseUp={(e) => this.onMouseUpHandler(e)}>{children}</div>);
 	}
 }

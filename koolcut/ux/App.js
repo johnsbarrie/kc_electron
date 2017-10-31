@@ -3,9 +3,9 @@ require('../less/main.less');
 'use strict';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ShotNav from './jsx/ShotNav';
-import Preview from './jsx/Preview';
-import Timeline from './jsx/Timeline';
+import ShotNav from './jsx/nav/ShotNav';
+import Preview from './jsx/monitor/Preview';
+import TimelinePanel from './jsx/timeline/TimelinePanel';
 
 export default class App extends React.Component {
 	render () {
@@ -17,7 +17,7 @@ export default class App extends React.Component {
           <ShotNav navigationMaps={this.props.navigationMaps}/>
           <Preview/>
       	</div>
-      	<Timeline/>
+      	<TimelinePanel/>
   	  </div>
 		)
 	}
